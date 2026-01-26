@@ -75,7 +75,7 @@ def load_assets():
             cluster_map = json.load(f)
         
         # Load Reference Data for plotting
-        ref_data = pd.read_csv('data/house_data_classification_data.csv')
+        ref_data = pd.read_csv('data/house_data_classification.csv')
         return scaler, classifier, reg_models, features, cluster_map, ref_data
     except Exception as e:
         st.error(f"Error loading system assets: {e}")
@@ -239,3 +239,4 @@ with tab2:
         except Exception as e:
 
             st.error(f"Error: {e}")
+
