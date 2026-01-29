@@ -170,7 +170,7 @@ with tab1:
 
 # --- TAB 2: AI Consultant (Groq + PDF Context) ---
 with tab2:
-    st.header("WhatsApp-Style Smart Consultant")
+    st.header("Smart Consultant")
     
     # Strictly applying your prompt logic
     system_prompt = f"""
@@ -239,4 +239,5 @@ with tab2:
         except Exception as e:
 
             st.error(f"Error: {e}")
+
 
