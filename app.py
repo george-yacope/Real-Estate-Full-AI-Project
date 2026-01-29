@@ -219,7 +219,7 @@ with tab2:
     if user_query := st.chat_input("Ask about market trade-offs..."):
         st.session_state.messages.append({"role": "user", "content": user_query})
         
-        GROQ_API_KEY = "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" 
+        GROQ_API_KEY = "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" 
         url = "https://api.groq.com/openai/v1/chat/completions"
         headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
         payload = {
@@ -239,3 +239,4 @@ with tab2:
         except Exception as e:
 
             st.error(f"Error: {e}")
+
