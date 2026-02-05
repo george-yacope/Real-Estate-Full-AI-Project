@@ -218,8 +218,12 @@ with tab2:
 
     if user_query := st.chat_input("Ask about market trade-offs..."):
         st.session_state.messages.append({"role": "user", "content": user_query})
-        
-        GROQ_API_KEY = "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" 
+    
+        try:
+            GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+        except:
+            st.error("Groq API Key not found. Please set it in Streamlit Secrets.")
+            st.stop()
         url = "https://api.groq.com/openai/v1/chat/completions"
         headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
         payload = {
@@ -239,5 +243,6 @@ with tab2:
         except Exception as e:
 
             st.error(f"Error: {e}")
+
 
 
